@@ -1,0 +1,21 @@
+<!--pages/search/search.wxml-->
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content" class="text-white">Word Book</view>
+</cu-custom >
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <!-- Image -->
+    <view class="img">
+      
+    </view>
+    
+    <!-- Search bar -->
+    <view class="searchbar">
+      <input auto-focus placeholder="输入单词"/>
+    </view>
+
+    <!-- Historical word search list -->
+    <view>111</view>
+  </view>
+</scroll-view>

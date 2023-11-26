@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/search/search",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -15,6 +16,12 @@
       "sdkVersionBegin": "3.0.0",
       "sdkVersionEnd": "15.255.255"
     }
+  },
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom":"/colorui/components/cu-custom"
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
