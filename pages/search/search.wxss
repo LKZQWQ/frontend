@@ -4,7 +4,50 @@ page {
   display: flex;
   flex-direction: column;
 }
+
+.body{
+  /* Let its child element positionable relative to the windows of mobile */
+  position: relative;
+}
+
 .scrollarea {
   flex: 1;
   overflow-y: hidden;
+}
+
+.img{
+  background-color: aqua;
+  height: 470rpx;
+  width: 100%;
+}
+
+.searchbar{
+  box-sizing: content-box;
+  position: absolute;
+  top: 440rpx;
+  left: 65rpx;
+  width: 620rpx;
+  height: 40px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  background-color: #ffffff;
+  vertical-align:bottom;
+}
+
+.searchbar #searchButton{
+  float: left;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: gold;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+#searchInput{
+  float: left;
+  height: 100%;
+  padding-left: 20rpx;
+  border-bottom: 0;
 }
