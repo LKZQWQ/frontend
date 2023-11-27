@@ -34,7 +34,7 @@ page {
   vertical-align:bottom;
 }
 
-.searchbar #searchButton{
+.searchLabel{
   float: left;
   width: 40px;
   height: 40px;
@@ -43,6 +43,11 @@ page {
   background-color: gold;
   vertical-align: middle;
   border-radius: 2px;
+}
+
+.searchbar #searchButton{
+  width: 100%;
+  height: 100%;
 }
 
 #searchInput{

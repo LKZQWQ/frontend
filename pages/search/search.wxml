@@ -10,8 +10,10 @@
     
     <!-- Search bar -->
     <view class="searchbar">
-      <view id="searchButton"><label for="searchInput">111</label></view>
-      <input auto-focus placeholder="输入单词" id="searchInput" />
+    <label class="searchLabel" for="searchInput">
+    <view id="searchButton">按</view>
+    </label>
+      <input focus placeholder="输入单词" id="searchInput" />
     </view>
 
     <!-- Historical word search list -->
