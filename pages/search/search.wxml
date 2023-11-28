@@ -9,9 +9,9 @@
     </view>
     
     <!-- Search bar -->
-    <view class="searchbar">
+    <view class="searchbar radius shadow-warp bg-white">
     <label class="searchLabel" for="searchInput">
-    <view id="searchButton">按</view>
+    <view class="iconfont icon-search" id="searchButton"></view>
     </label>
       <input focus placeholder="输入单词" id="searchInput" />
     </view>
