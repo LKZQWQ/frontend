@@ -8,3 +8,11 @@ page, view{
   margin: 0;
   box-sizing: border-box;
 }
+
+.seperate_float_element{
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;  
+}

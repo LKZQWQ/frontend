@@ -10,7 +10,7 @@ page {
   position: relative;
 }
 
-.scrollarea {
+.scrollArea {
   flex: 1;
   overflow-y: hidden;
 }
@@ -21,10 +21,16 @@ page {
   width: 100%;
 }
 
-.searchbar{
+.wordPart{
+  position: relative;
+}
+
+.searchBar{
   box-sizing: content-box;
-  position: absolute;
-  top: 440rpx;
+  /* Its crucial fucntion is that the ratio of the height of search bar in the picture
+     to the height outside the picture is fixed in distinct phones. */
+  position: relative;
+  top: -30rpx;
   left: 65rpx;
   width: 620rpx;
   height: 80rpx;
@@ -54,4 +60,32 @@ page {
   height: 100%;
   width: 540rpx;
   border-bottom: 0;
+}
+
+.wordPart .wordInformation{
+  float: left;
+  position: relative;
+  width: 100%;
+  height: 150rpx;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.wordPart .historicalWord{
+  position: absolute;
+  margin-left: 65rpx;
+  top: 30rpx;
+  height: 120rpx;
+  text-align: center;
+  font-size: 35rpx;
+}
+
+.wordPart .historicalWord .word{
+  float: left;
+}
+
+.wordPart .historicalWord .interpretation{
+  float: left;
+  font-size: 32rpx;
+  margin-top: 10rpx;
 }
