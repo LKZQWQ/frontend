@@ -1,10 +1,18 @@
 /**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@import "./styles/iconfont.wxss";
+
+page, view{
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-} 
+}
+
+.seperate_float_element{
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;  
+}

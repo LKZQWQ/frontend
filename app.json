@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/search/search",
+    "pages/wordTest/wordTest",
+    "pages/user/user"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -16,7 +17,31 @@
       "sdkVersionEnd": "15.255.255"
     }
   },
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "cu-custom":"/colorui/components/cu-custom"
+  },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#0081ff",
+    "list":[
+      {
+        "pagePath": "pages/search/search",
+        "text": "查词",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search-active.png"
+      },
+      {
+        "pagePath": "pages/wordTest/wordTest",
+        "text": "测验",
+        "iconPath": "images/test.png",
+        "selectedIconPath": "images/test-active.png"
+      }
+    ]
+  }
 }
