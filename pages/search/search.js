@@ -1,11 +1,36 @@
 // pages/search/search.js
 Page({
+  // Get the value of input bar
+  searchInputWord(e){
+    // Description: Initiate a GET request to backend to obtain the information of words
+    
+    //-----To be deleted
+    // The form of request information: String-wordSlice
+    // The form of response information: array-Object(id-word-translation)
+    //-----
+    console.log(e.detail.value)
+    wx.request({
+      url: 'http://ran.v1.idcfengye.com/search/slice',
+      method: 'GET',
+      data: {
+        wordSlice: e.detail.value
+      },
+      success: function(res) {
+        // Show the information of words
+        console.log(res)
+      },
+      fail: function (res) {
+        // 
+        console.log('shit')
+      }
+    })
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
-
+ 
   },
 
   /**
@@ -19,7 +44,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+  
   },
 
   /**
