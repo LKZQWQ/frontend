@@ -2,27 +2,52 @@
 Page({
   // Get the value of input bar
   searchInputWord(e){
-    // Description: Initiate a GET request to backend to obtain the information of words
-    
-    //-----To be deleted
-    // The form of request information: String-wordSlice
-    // The form of response information: array-Object(id-word-translation)
-    //-----
-    console.log(e.detail.value)
-    wx.request({
-      url: 'http://ran.v1.idcfengye.com/search/slice',
-      method: 'GET',
-      data: {
-        wordSlice: e.detail.value
-      },
-      success: function(res) {
-        // Show the information of words
-        console.log(res)
-      },
-      fail: function (res) {
-        // 
-        console.log('shit')
-      }
+    let that = this
+    let wordList = that.data.wordList
+    // Implement anti-shake processing of search box
+    // Clear the delayer of coresponding timer
+    clearTimeout(that.data.timer)
+    // Restart a delayer and assign timeID to this.timer
+    // A word search requset will be initiate if no new input events is trigger within 500ms
+    that.setData({
+      'timer': setTimeout(() => {
+        let word = e.detail.value
+        wordList = [] // Clear old data
+        // Determine whether it is empty
+        if (word === ''){
+          that.setData({
+            wordList
+          })
+          return
+        }
+        // Initiate a GET request to backend to obtain the information of words
+        wx.request({
+          url: 'http://ran.v1.idcfengye.com/search/slice',
+          method: 'GET',
+          data: {
+            wordSlice: word
+          },
+          success: function(res) {
+            // Render the information of words
+            let code = res.data.code
+            if (code === 404){
+              that.setData({
+                wordList
+              })
+            } else if (code === 200){
+              let wordObj = res.data.data
+              let len = wordObj.length
+              for (let i = 0; i < len; i++){
+                // Add the information of word
+                wordList.push(wordObj[i])
+                that.setData({
+                  wordList
+                })
+              }  
+            }
+          },
+        })
+      }, 500)
     })
   },
 
@@ -30,7 +55,10 @@ Page({
    * 页面的初始数据
    */
   data: {
- 
+    // The time ID of Delay
+    timer: null,
+    // Search result
+    wordList: []
   },
 
   /**

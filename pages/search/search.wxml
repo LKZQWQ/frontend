@@ -17,12 +17,11 @@
     </view>
     <!-- Historical word search list -->
     <scroll-view class="scrollArea wordList" scroll-y type="list">
-    <!-- <view wx:for="{{array}}"> {{item}} </view> -->
-      <view class="wordInformation">
-        <view class="historicalWord">
-          <view class="word">word</view>
+      <view class="wordInformation" wx:for="{{wordList}}" wx:key="id">
+        <view class="historicalWord" id="word-{{item.id}}">
+          <view class="word">{{item.word}}</view>
           <view class="seperate_float_element"></view>
-          <view class="interpretation">n.单词</view>
+          <view class="interpretation">{{item.translation}}</view>
         </view>
       </view>
     </scroll-view>  

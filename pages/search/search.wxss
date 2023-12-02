@@ -88,4 +88,10 @@ page {
   float: left;
   font-size: 32rpx;
   margin-top: 10rpx;
+  width: 620rpx;
+  text-align: left;
+  /* Restraint text in one line */
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
