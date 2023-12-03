@@ -3,6 +3,7 @@
   <view slot="backText">返回</view>
 </cu-custom >
 <view class="body">
+<<<<<<< HEAD
   <!-- Image -->
   <view class="img">
       
@@ -26,4 +27,4 @@
       </view>
     </scroll-view>  
   </view>
-  </view>
+</view>
