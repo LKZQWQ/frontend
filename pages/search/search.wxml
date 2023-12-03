@@ -3,70 +3,27 @@
   <navigator slot="backText" class="close" target="miniProgram" open-type="exit">返回</navigator>
 </cu-custom >
 <view class="body">
-    <!-- Image -->
-    <view class="img">
+  <!-- Image -->
+  <view class="img">
       
-    </view>
-    <view class="wordPart">
-      <!-- Search bar -->
-      <view class="searchBar radius shadow-warp bg-white">
-      <label class="searchLabel" for="searchInput">
-      <view class="iconfont icon-search" id="searchButton"></view>
-      </label>
-        <input focus placeholder="输入单词" id="searchInput" />
-      </view>
-      <!-- Historical word search list -->
-      <scroll-view class="scrollArea wordList" scroll-y type="list">
-      <!-- Sliding window -->
-        <view class="wordInformation">
-          <view class="historicalWord">
-            <view class="word">word</view>
-            <view class="seperate_float_element"></view>
-            <view class="interpretation">n.单词</view>
-          </view>
-        </view>
-        <view class="wordInformation">
-          <view class="historicalWord">
-            <view class="word">word</view>
-            <view class="seperate_float_element"></view>
-            <view class="interpretation">n.单词</view>
-          </view>
-        </view>
-        <view class="wordInformation">
-          <view class="historicalWord">
-            <view class="word">word</view>
-            <view class="seperate_float_element"></view>
-            <view class="interpretation">n.单词</view>
-          </view>
-        </view>
-        <view class="wordInformation">
-          <view class="historicalWord">
-            <view class="word">word</view>
-            <view class="seperate_float_element"></view>
-            <view class="interpretation">n.单词</view>
-          </view>
-        </view>
-        <view class="wordInformation">
-          <view class="historicalWord">
-            <view class="word">word</view>
-            <view class="seperate_float_element"></view>
-            <view class="interpretation">n.单词</view>
-          </view>
-        </view>
-        <view class="wordInformation">
-          <view class="historicalWord">
-            <view class="word">word</view>
-            <view class="seperate_float_element"></view>
-            <view class="interpretation">n.单词</view>
-          </view>
-        </view>
-        <view class="wordInformation">
-          <view class="historicalWord">
-            <view class="word">word</view>
-            <view class="seperate_float_element"></view>
-            <view class="interpretation">n.单词</view>
-          </view>
-        </view>
-      </scroll-view>  
-    </view>
   </view>
+  <view class="wordPart">
+    <!-- Search bar -->
+    <view class="searchBar radius shadow-warp bg-white">
+    <label class="searchLabel" for="searchInput">
+    <view class="iconfont icon-search" id="searchButton"></view>
+    </label>
+      <input type="text" name="wordValue" maxlength="16" bindinput="searchInputWord" focus placeholder="输入单词" id="searchInput"/>
+    </view>
+    <!-- Historical word search list -->
+    <scroll-view class="scrollArea wordList" scroll-y type="list">
+      <view class="wordInformation" wx:for="{{wordList}}" wx:key="id">
+        <view class="historicalWord" id="word-{{item.id}}">
+          <view class="word">{{item.word}}</view>
+          <view class="seperate_float_element"></view>
+          <view class="interpretation">{{item.translation}}</view>
+        </view>
+      </view>
+    </scroll-view>  
+  </view>
+</view>
