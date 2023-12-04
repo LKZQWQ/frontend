@@ -17,7 +17,7 @@
     </view>
     <!-- Historical word search list -->
     <scroll-view class="scrollArea wordList" scroll-y type="list">
-      <view class="wordInformation" wx:for="{{wordList}}" wx:key="id">
+      <view class="wordInformation" hover-class="press-grey-hover" wx:for="{{wordList}}" wx:key="id">
         <view class="historicalWord" id="word-{{item.id}}">
           <view class="word">{{item.word}}</view>
           <view class="seperate_float_element"></view>

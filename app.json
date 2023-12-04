@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/search/search",
-    "pages/wordTest/StartTest/StartTest",
+    "pages/wordTest/startTest/startTest",
     "pages/wordTest/testPage/testPage",
-    "pages/wordTest/FinishTest/FinishTest",
+    "pages/wordTest/finishTest/finishTest",
     "pages/user/user"
   ],
   "window": {
@@ -39,7 +39,7 @@
         "selectedIconPath": "images/search-active.png"
       },
       {
-        "pagePath": "pages/wordTest/testPage/testPage",
+        "pagePath": "pages/wordTest/startTest/startTest",
         "text": "测验",
         "iconPath": "images/test.png",
         "selectedIconPath": "images/test-active.png"

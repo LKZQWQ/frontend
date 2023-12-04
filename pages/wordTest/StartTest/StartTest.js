@@ -1,4 +1,4 @@
-// pages/wordTest/StartTest/StartTest.js
+// pages/wordTest/startTest/startTest.js
 Component({
 
   /**

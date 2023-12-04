@@ -1,1 +1,57 @@
-/* pages/wordTest/FinishTest/FinishTest.wxss */
+/* pages/wordTest/FinishTest/finishTest.wxss */
+/* pages/wordTest/startTest/startTest.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.body{
+  height: 100%;
+  width: 100%;
+}
+
+.body .information{
+  position: relative;
+  height: 30%;
+  width: 100%;
+}
+
+.body .testInformation{
+  position: absolute;
+  bottom: -10%;
+  width: 100%;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 400;
+}
+
+.body #vocabulary{
+  display: inline-block;
+  font-weight: 600;
+} 
+
+.body .btn{
+  position: relative;
+  height: 70%;
+}
+
+.btn .returnBtn{
+  display: table;
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  height: 20%;
+  width: 60%;
+  text-align: center;
+  line-height: 100%;
+  font-size: 50rpx;
+  font-weight: 400;
+  background-color: #1890ff;
+}
+
+.btn .returnBtn .btnText{
+  display: table-cell;
+  vertical-align: middle;
+  color: #ffffff;
+}
