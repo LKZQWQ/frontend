@@ -1,0 +1,32 @@
+<!--pages\testPage\testPage.wxml-->
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <navigator slot="backText" bindtap="goBack">返回</navigator>
+</cu-custom >
+<view class="body">
+  <view class="word">
+      <view class="wordDetail">photosynthesis</view>
+  </view>
+  <view class="translations">
+    <!-- <view class="translation shadow shadow-lg radius" wx:for="{{wordList}}" wx:key="id" id="word-{{item.id}}">
+      {{item.translation}}
+    </view>
+    <view class="translation shadow shadow-lg radius bg-white" hover-class="press-grey-hover">
+    <view class="translationDetail">v.沃日</view>
+      </view>
+    -->
+    <view class="translationList">
+      <view class="translation shadow shadow-lg radius bg-white" hover-class="press-grey-hover">
+          <view class="translationDetail">v.沃日</view>
+      </view>
+      <view class="translation shadow shadow-lg radius bg-white" hover-class="press-grey-hover">
+        <view class="translationDetail">v.我要挽元申</view>
+      </view>
+      <view class="translation shadow shadow-lg radius bg-white" hover-class="press-grey-hover">
+        <view class="translationDetail">n.整笑了家人们</view>
+      </view>
+      <view class="translation shadow shadow-lg radius bg-white" hover-class="press-grey-hover">
+        <view class="translationDetail">perp.我测你的码</view>
+      </view>
+    </view>
+  </view>
+</view>
