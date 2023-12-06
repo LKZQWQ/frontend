@@ -5,7 +5,6 @@
 <view class="body">
   <!-- Image -->
   <image class="img" src="/images/cloud-sky.jpg">
-
   </image>
   <view class="wordPart">
     <!-- Search bar -->

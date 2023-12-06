@@ -1,6 +1,6 @@
 <!--pages\testPage\testPage.wxml-->
 <cu-custom bgColor="bg-blue" isBack="{{true}}">
-  <navigator slot="backText" bindtap="goBack">返回</navigator>
+  <view slot="backText" bindtap="goBack">返回</view>
 </cu-custom >
 <view class="body">
   <view class="word">
