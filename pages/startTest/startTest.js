@@ -1,5 +1,10 @@
-// pages/wordTest/wordTest.js
+// pages/startTest/startTest.js
 Page({
+  goToTest: function(){
+    wx.navigateTo({
+      url: '/pages/finishTest/finishTest',
+    })
+  },
 
   /**
    * 页面的初始数据

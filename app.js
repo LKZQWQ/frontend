@@ -25,5 +25,8 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  getBack(){
+    wx.navigateBack()
   }
 })

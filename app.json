@@ -1,11 +1,13 @@
 {
   "pages": [
     "pages/search/search",
-    "pages/wordTest/wordTest",
-    "pages/user/user"
+    "pages/startTest/startTest",
+    "pages/testPage/testPage",
+    "pages/finishTest/finishTest",
+    "pages/user/user",
+    "pages/word/word"
   ],
   "window": {
-    "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
   "style": "v2",
@@ -17,11 +19,8 @@
       "sdkVersionEnd": "15.255.255"
     }
   },
-  "window": {
-    "navigationStyle": "custom"
-  },
   "usingComponents": {
-    "cu-custom":"/colorui/components/cu-custom"
+    "cu-custom": "/colorui/components/cu-custom"
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
@@ -29,7 +28,7 @@
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#0081ff",
-    "list":[
+    "list": [
       {
         "pagePath": "pages/search/search",
         "text": "查词",
@@ -37,7 +36,7 @@
         "selectedIconPath": "images/search-active.png"
       },
       {
-        "pagePath": "pages/wordTest/wordTest",
+        "pagePath": "pages/startTest/startTest",
         "text": "测验",
         "iconPath": "images/test.png",
         "selectedIconPath": "images/test-active.png"

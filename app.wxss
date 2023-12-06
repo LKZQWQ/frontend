@@ -16,3 +16,7 @@ page, view{
   clear: both;
   visibility: hidden;  
 }
+
+.press-grey-hover{
+  background-color: #ededed !important;
+}
