@@ -2,7 +2,7 @@
 Page({
   goToTest: function(){
     wx.navigateTo({
-      url: '/pages/finishTest/finishTest',
+      url: '/pages/testPage/testPage',
     })
   },
 
