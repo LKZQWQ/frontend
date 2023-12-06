@@ -1,4 +1,4 @@
-<!--pages/FinishTest/finishTest.wxml-->
+<!--pages/finishTest/finishTest.wxml-->
 <cu-custom bgColor="bg-blue" isBack="{{true}}">
   <navigator slot="backText" class="close" target="miniProgram" open-type="exit">返回</navigator>
 </cu-custom >
