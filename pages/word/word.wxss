@@ -1,1 +1,65 @@
 /* pages/word/word.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.body{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.body .wordPart{
+  float: left;
+  width: 100%;
+  height: 33%;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.wordPart view{
+  width: 90%;
+  padding-left: 3%;
+  padding-top: 2%;
+}
+
+.wordPart .word{
+  font-size: 45rpx;
+  font-weight: 600;
+}
+
+.wordPart .translation{
+  padding-top: 3%;
+  font-size: 40rpx;
+}
+
+.body .title{
+  width: 90%;
+  padding-left: 3%;
+  padding-top: 2%;
+  font-size: 35rpx;
+  font-weight: 600;
+}
+
+.body .sentence{
+  width: 90%;
+  padding-top: 3%;
+  padding-left: 3%;
+  font-size: 35rpx;
+}
+
+.body .definitionPart{
+  float: left;
+  width: 100%;
+  height: 34%;
+}
+
+
+.body .exampleSentencePart{
+  float: left;
+  width: 100%;
+  height: 33%;
+  border-bottom: 1px solid #f1f1f1;
+}

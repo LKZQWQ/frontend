@@ -4,9 +4,9 @@
 </cu-custom >
 <view class="body">
   <!-- Image -->
-  <view class="img">
-      
-  </view>
+  <image class="img" src="/images/cloud-sky.jpg">
+
+  </image>
   <view class="wordPart">
     <!-- Search bar -->
     <view class="searchBar radius shadow-warp bg-white">
@@ -17,8 +17,8 @@
     </view>
     <!-- Historical word search list -->
     <scroll-view class="scrollArea wordList" scroll-y type="list">
-      <view class="wordInformation" hover-class="press-grey-hover" wx:for="{{wordList}}" wx:key="id">
-        <view class="historicalWord" id="word-{{item.id}}">
+      <view class="wordInformation" hover-class="press-grey-hover" wx:for="{{wordList}}" wx:key="id" id="word-{{index}}" bindtap="goToWord">
+        <view class="historicalWord">
           <view class="word">{{item.word}}</view>
           <view class="seperate_float_element"></view>
           <view class="interpretation">{{item.translation}}</view>

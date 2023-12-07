@@ -25,7 +25,7 @@
         <view class="translationDetail">n.整笑了家人们</view>
       </view>
       <view class="translation shadow shadow-lg radius bg-white" hover-class="press-grey-hover">
-        <view class="translationDetail">perp.我测你的码</view>
+        <view class="translationDetail">prep.我测你的码</view>
       </view>
     </view>
   </view>

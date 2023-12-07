@@ -16,7 +16,6 @@ page {
 }
 
 .img{
-  background-color: aqua;
   height: 470rpx;
   width: 100%;
 }
