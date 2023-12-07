@@ -111,6 +111,7 @@ Page({
     })
   },
   
+
   addElementToHistoricalList(e){
     let list = this.data.historicalWordList
     let newQueriedWord = {

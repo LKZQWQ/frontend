@@ -27,6 +27,6 @@ App({
     userInfo: null
   },
   getBack(){
-    // wx.navigateBack()
+    wx.navigateBack()
   }
 })
