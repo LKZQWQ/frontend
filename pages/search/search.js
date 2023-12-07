@@ -9,11 +9,11 @@ Page({
 
     // Implement anti-shake processing of search box
     // Clear the delayer of coresponding timer
-    clearTimeout(that.data.timer)
+    clearTimeout(that.data.timerSearch)
     // Restart a delayer and assign timeID to this.timer
     // A word search requset will be initiate if no new input events is trigger within 500ms
     that.setData({
-      'timer': setTimeout(() => {
+      'timerSearch': setTimeout(() => {
         let word = e.detail.value
         searchedWordList = [] // Clear old data
         // Determine whether it is empty
@@ -62,30 +62,12 @@ Page({
       wordInfom = this.data.searchedWordList[wordIndex]
     }
     if (wordInfom === undefined) return;
-    // Replace special character
+    // Local Storage
+    that.addToLocalHistoricalWordList(wordInfom)
 
+    // Replace special character
     let word =  encodeURIComponent(wordInfom.word);
     let wordJSON = JSON.stringify(word)
-    // // Local storage
-    // if (mark === 1){
-    //   // Add word to historical list
-    //   this.addElementToHistoricalList(wordInfom)
-    //   // Store data locally
-    //   wx.setStorage({
-    //     key: 'historicalWordList',
-    //     data: this.data.historicalWordList,
-    //     success () {
-    //       wx.getStorage({
-    //         key: 'historicalWordList',
-    //         success: (res) => {
-    //           that.updateDisplayedListMark(0)
-    //           console.log(res.data);
-    //           that.updateWordAndDataList(res.data, 0)
-    //         }
-    //       })
-    //     }
-    //   })
-    // }
 
     wx.navigateTo({
       url: '/pages/word/word?word=' + wordJSON,
@@ -93,17 +75,31 @@ Page({
   },
 
   updateWordAndDataList(newList, mark){
-    if (this.data.displayedListMark === mark){
+    let that = this
+
+    if (mark === 0){
       this.setData({
-        wordList: newList,
+        historicalWordList: newList,
       })
+    } else if(mark === 1){
+      this.setData({
+        searchedWordList: newList,
+      })
+    }
+    if (this.data.displayedListMark === mark){
+      // Avoid changing style in the process of jumping next page
       if (mark === 0){
-        this.setData({
-          historicalWordList: newList,
+        clearTimeout(that.data.timerHistory)
+        that.setData({
+          'timerHistory': setTimeout( () => {
+            this.setData({
+              wordList: newList,
+            })
+          }, 800)
         })
-      } else if(mark === 1){
+      } else{
         this.setData({
-          searchedWordList: newList,
+          wordList: newList,
         })
       }
     }
@@ -115,29 +111,56 @@ Page({
     })
   },
   
-  // addElementToHistoricalList(e){
-  //   let list = this.data.historicalWordList
-  //   list.unshift(e)
-  //   this.setData({
-  //     historicalWordList: list
-  //   })},
+
+  addElementToHistoricalList(e){
+    let list = this.data.historicalWordList
+    let newQueriedWord = {
+      id: e.id,
+      word: e.word,
+      translation: e.translation
+    }
+    // If the word is already in list, put it at the beginning of list.
+    let index = list.findIndex(obj => obj.id === newQueriedWord.id)
+    if (index !== -1){
+      list.splice(index, 1)[0]
+    }
+    list.unshift(newQueriedWord)
+    this.setData({
+      historicalWordList: list
+    })},
+
+    addToLocalHistoricalWordList(wordInfom){
+      let that = this
+      // Add word to historical list
+      this.addElementToHistoricalList(wordInfom)
+      // Store data locally
+      wx.setStorage({
+        key: 'historicalWordList',
+        data: this.data.historicalWordList,
+        success () {
+          wx.getStorage({
+            key: 'historicalWordList',
+            success: (res) => {
+              that.updateWordAndDataList(res.data, 0)
+            }
+          })
+        }
+      })
+    },
 
   /**
    * 页面的初始数据
    */
   data: {
     // The time ID of Delay
-    timer: null,
+    timerSearch: null,
+    timerHistory: null,
     // Displayed list
     wordList: [],
     // Searched word list
     searchedWordList: [],
     // Historical word list
-    historicalWordList: [{
-      id: '1',
-      word: 'word',
-      translation: 'n.单词'
-    }],
+    historicalWordList: [],
     // An event lock for tow types of list who preferentially render data
     // 0 presents historical list and 1 presents searched list
     displayedListMark: 0

@@ -20,7 +20,6 @@ Page({
     let word = JSON.parse(options.word)
     let that = this
     word = decodeURIComponent(word)
-    console.log(word); // a%20%26%20h
     wx.request({
       url: 'http://ran.v1.idcfengye.com/search',
       method: 'GET',
@@ -30,7 +29,6 @@ Page({
       success: function(res) {
         // Render the information of words
         let code = res.data.code
-        console.log(res);
         if (code === 404){
           that.setData({
             id: 'wrong',

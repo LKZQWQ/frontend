@@ -33,6 +33,12 @@ page {
 .wordPart .translation{
   padding-top: 3%;
   font-size: 40rpx;
+  /* Restraint text in one line */
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 }
 
 .body .title{
@@ -48,6 +54,12 @@ page {
   padding-top: 3%;
   padding-left: 3%;
   font-size: 35rpx;
+  /* Restraint text in one line */
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
 }
 
 .body .definitionPart{
