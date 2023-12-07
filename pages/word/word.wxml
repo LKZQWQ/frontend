@@ -1,0 +1,34 @@
+<!--pages/word/word.wxml-->
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+  <view slot="backText" bindtap="goBack">返回</view>
+</cu-custom >
+
+<view class="body">
+  <view class="wordPart">
+    <view class="word">
+      {{word}}
+    </view>
+    <view class="phonetic">
+      /{{phonetic}}/
+    </view>
+    <view class="translation">
+      {{translation}}
+    </view>
+  </view>
+  <view class="definitionPart">
+    <view class="title" id="definitionTitle">
+      英文释义
+    </view>
+    <view class="sentence" id="definitionSentence">
+      {{definition}}
+    </view>
+  </view>
+  <view class="exampleSentencePart">
+    <view class="title" id="exampleSentenceTitle">
+      例句
+    </view>
+    <view class="sentence" id="examplenSentence">
+      
+    </view>
+  </view>
+</view>

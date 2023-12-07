@@ -1,0 +1,22 @@
+/**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@import "./styles/iconfont.wxss";
+
+page, view{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.seperate_float_element{
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;  
+}
+
+.press-grey-hover{
+  background-color: #ededed !important;
+}
